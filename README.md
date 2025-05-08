@@ -15,6 +15,11 @@ Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS
 
 ## Uso
 
+```
+python3 -mvenv virtual
+source virtual/bin/activate
+pip3 install boto3
+```
 ```bash
 python aws-email-root-validator.py --email seu.email@exemplo.com
 
