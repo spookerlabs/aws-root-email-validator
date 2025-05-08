@@ -1,12 +1,11 @@
-# Validador de Bucket S3
+# Validador de cont
 
-Este script Python utiliza o boto3 para gerenciar buckets S3 na AWS. Ele realiza as seguintes operações:
+Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS. Ele realiza as seguintes operações:
 
-1. Cria um bucket chamado `mybucketvalidador` (se não existir)
+1. Cria um bucket chamado `<name que escolher cli>` (se não existir)
 2. Habilita o uso de ACL no bucket
 3. Verifica se um e-mail possui conta AWS
-4. Adiciona o e-mail à ACL do bucket se tiver conta AWS
-
+4. 
 ## Pré-requisitos
 
 - Python 3.6+
@@ -24,22 +23,28 @@ Este script Python utiliza o boto3 para gerenciar buckets S3 na AWS. Ele realiza
 ## Uso
 
 ```bash
-python s3_bucket_validator.py --email seu.email@exemplo.com
+python aws-email-root-validator.py --email seu.email@exemplo.com
+
+python aws-email-root-validator.py --file email-list.txt
 ```
 
-## Funcionalidades
+# Exemplos
 
-- Verifica se o bucket `mybucketvalidador` existe
-- Cria o bucket se não existir, habilitando ACL
-- Verifica se o e-mail informado possui conta AWS
-- Adiciona o e-mail à ACL do bucket se tiver conta AWS
-- Fornece feedback claro sobre cada operação
+aws-email-root-validator % python3 aws-email-root-validator.py --bucket awsemailvalidator --email spooker@gmail.com
 
-## Permissões necessárias
+Verificando e-mails...
 
-O usuário AWS precisa ter as seguintes permissões:
-- `s3:CreateBucket`
-- `s3:PutBucketAcl`
-- `s3:GetBucketAcl`
-- `iam:GetAccountAuthorizationDetails`
-- `iam:ListAccountAliases`
+✓ spooker@gmail.com (Conta AWS encontrada)
+
+
+aws-email-root-validator % python3 aws-email-root-validator.py --bucket awsemailvalidator --file emails.txt
+
+Verificando e-mails...
+
+✗ spooker+cloudgoat@gmail.com (Sem conta AWS)
+✓ aws@amazonaws.com (Conta AWS encontrada)
+✓ spooker@gmail.com (Conta AWS encontrada)
+✗ spooker+alias123@gmail.com (Sem conta AWS)
+✗ rodrigo.montoro@clavis.com.br (Sem conta AWS)
+✓ spooker+dataperimeterorganizations@gmail.com (Conta AWS encontrada)
+✗ spooker+dataperimeterlabs@gmail.com (Sem conta AWS)
