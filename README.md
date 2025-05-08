@@ -5,7 +5,7 @@ Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS
 1. Cria um bucket chamado `<name que escolher cli>` (se não existir)
 2. Habilita o uso de ACL no bucket
 3. Verifica se um e-mail possui conta AWS
-4. 
+
 ## Pré-requisitos
 
 - Python 3.6+
@@ -16,9 +16,9 @@ Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS
 
 1. Clone o repositório
 2. Instale as dependências:
-   ```
-   pip install -r requirements.txt
-   ```
+```
+pip install -r requirements.txt
+```
 
 ## Uso
 
@@ -30,21 +30,7 @@ python aws-email-root-validator.py --file email-list.txt
 
 # Exemplos
 
-aws-email-root-validator % python3 aws-email-root-validator.py --bucket awsemailvalidator --email spooker@gmail.com
+![image](https://github.com/user-attachments/assets/a0153226-d8ce-4cb2-99f3-9a00fe3bd185)
 
-Verificando e-mails...
+![image](https://github.com/user-attachments/assets/e955d151-f3bb-4034-afc5-690ea5c5cd4b)
 
-✓ spooker@gmail.com (Conta AWS encontrada)
-
-
-aws-email-root-validator % python3 aws-email-root-validator.py --bucket awsemailvalidator --file emails.txt
-
-Verificando e-mails...
-
-✗ spooker+cloudgoat@gmail.com (Sem conta AWS)
-✓ aws@amazonaws.com (Conta AWS encontrada)
-✓ spooker@gmail.com (Conta AWS encontrada)
-✗ spooker+alias123@gmail.com (Sem conta AWS)
-✗ rodrigo.montoro@clavis.com.br (Sem conta AWS)
-✓ spooker+dataperimeterorganizations@gmail.com (Conta AWS encontrada)
-✗ spooker+dataperimeterlabs@gmail.com (Sem conta AWS)
