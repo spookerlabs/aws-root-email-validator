@@ -2,7 +2,7 @@
 
 Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS. Ele realiza as seguintes operações:
 
-1. Cria um bucket chamado `<name que escolher cli>` (se não existir)
+1. Cria um bucket chamado `<name que escolher --bucket>` 
 2. Habilita o uso de ACL no bucket
 3. Verifica se um e-mail possui conta AWS
 
@@ -11,14 +11,7 @@ Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS
 - Python 3.6+
 - Credenciais da AWS configuradas (via AWS CLI ou variáveis de ambiente)
 - Permissões adequadas na conta AWS
-
-## Instalação
-
-1. Clone o repositório
-2. Instale as dependências:
-```
-pip install -r requirements.txt
-```
+- Boto3
 
 ## Uso
 
