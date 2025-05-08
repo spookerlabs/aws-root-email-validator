@@ -1,4 +1,4 @@
-# Validador de cont
+# Validador se um e-mail possui conta na AWS
 
 Este script Python utiliza o boto3 para descobrir se um e-mail tem contas na AWS. Ele realiza as seguintes operações:
 
